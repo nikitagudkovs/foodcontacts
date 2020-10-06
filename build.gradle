@@ -1,0 +1,32 @@
+buildscript {
+    apply from: 'versions.gradle'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath deps.android.gradle_plugin
+        classpath deps.kotlin.plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+afterEvaluate {
+    if (project.plugins.hasPlugin("kotlin-kapt")) {
+        kapt {
+            javacOptions {
+                option("-Xmaxerrs", 10000)
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
