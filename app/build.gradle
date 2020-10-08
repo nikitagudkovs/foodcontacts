@@ -10,7 +10,7 @@ android {
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.kotlin.mvvm.boilerplate"
+        applicationId "com.ng.test.foodcontacts"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode 1

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ng.test.foodcontacts.ui.main.detail.DetailViewModel" />
+
+        <variable
+            name="recipe"
+            type="com.ng.test.foodcontacts.data.local.room.RecipeEntity" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/detail_thumb"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/food_placeholder"
+            app:layout_constraintTop_toTopOf="parent"
+            app:profileImage="@{viewModel.image}" />
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/padding_normal"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/black_85"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/detail_category"
+            app:layout_constraintTop_toBottomOf="@+id/detail_thumb"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/detail_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_normal"
+            android:text="@{viewModel.category}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintTop_toBottomOf="@id/detail_title"
+            tools:text="Category" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_category">
+
+            <TextView
+                android:id="@+id/detail_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_small"
+                android:ellipsize="end"
+                android:paddingHorizontal="@dimen/padding_normal"
+                android:paddingBottom="@dimen/padding_normal"
+                android:text="@{viewModel.description}"
+                android:textColor="@color/black_55"
+                android:textSize="@dimen/text_small"
+                tools:text="@tools:sample/lorem/random" />
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
