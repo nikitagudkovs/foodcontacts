@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 
 object ImageViewBinding {
 
-    @BindingAdapter("profileImage")
+    @BindingAdapter("thumbnail")
     @JvmStatic
     fun loadImage(view: ImageView, imageUrl: String?) {
         Glide.with(view.context)

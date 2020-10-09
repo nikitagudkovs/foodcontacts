@@ -5,10 +5,6 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import androidx.annotation.FloatRange
 
-/**
- * Created by cuongpm on 11/29/18.
- */
-
 object Memory {
 
     fun calcCacheSize(context: Context, @FloatRange(from = 0.01, to = 1.0) size: Float): Long {

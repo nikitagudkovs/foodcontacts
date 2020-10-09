@@ -37,9 +37,9 @@ class RecipeRepository @Inject constructor(
         return localDataSource.getRecipe(id).doOnSuccess { recipe -> fetchedRecipe = recipe }
     }
 
-    override fun saveAllRecipes(recipies: List<RecipeEntity>) {
-        localDataSource.saveAllRecipes(recipies)
-        remoteDataSource.saveAllRecipes(recipies)
+    override fun saveAllRecipes(recipes: List<RecipeEntity>) {
+        localDataSource.saveAllRecipes(recipes)
+        remoteDataSource.saveAllRecipes(recipes)
     }
 
     override fun refreshRecipes() {

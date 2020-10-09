@@ -20,8 +20,6 @@ class ProductListFragmentTest {
 
     val LIST_ITEM_IN_TEST = 2
 
-    //val RECIPE_IN_TEST = DummyProductData.products[LIST_ITEM_IN_TEST]
-
     @Before
     fun setUp() {
     }
@@ -46,14 +44,10 @@ class ProductListFragmentTest {
                     LIST_ITEM_IN_TEST, click()
                 )
             )
-
-        // Confirm nav to DetailFragment and display title
-        //onView(withId(R.id.textViewProductName)).check(matches(withText(PRODUCTS_IN_TEST.productName)))
     }
 
     @Test
     fun stage3_testBackNavigationToProductListFragment() {
-        // Click list item #LIST_ITEM_IN_TEST
         onView(withId(R.id.home_view_recycler))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecipeAdapter.RecipeViewHolder>(
@@ -64,9 +58,6 @@ class ProductListFragmentTest {
 
         // wait for scroll
         Thread.sleep(500)
-
-        // Confirm nav to DetailFragment and display title
-        //onView(withId(R.id.textViewProductName)).check(matches(withText(PRODUCTS_IN_TEST.productName)))
 
         //Navigate to previous product list screen
         pressBack()

@@ -37,10 +37,10 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/food_placeholder"
                 app:layout_constraintTop_toTopOf="parent"
-                app:profileImage="@{item.img}" />
+                app:thumbnail="@{item.img}" />
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/recipe_item_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
@@ -50,12 +50,12 @@
                 android:textColor="@color/black_85"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/tv_author"
+                app:layout_constraintBottom_toTopOf="@id/recipe_item_author"
                 app:layout_constraintTop_toBottomOf="@+id/recipe_item_thumb"
                 tools:text="Item name" />
 
             <TextView
-                android:id="@+id/tv_author"
+                android:id="@+id/recipe_item_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/padding_normal"
@@ -63,7 +63,7 @@
                 android:text="@{item.category}"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_small"
-                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintTop_toBottomOf="@id/recipe_item_title"
                 tools:text="Category name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

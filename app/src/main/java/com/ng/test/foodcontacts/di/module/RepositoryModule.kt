@@ -12,11 +12,6 @@ import javax.inject.Singleton
 @Module
 abstract class RepositoryModule {
 
-//    @Singleton
-//    @Binds
-//    @LocalData
-//    abstract fun bindContactLocalDataSource(contactLocalDataSource: ContactsLocalDataSource): ContactDataSource
-
     @Singleton
     @Binds
     @LocalData

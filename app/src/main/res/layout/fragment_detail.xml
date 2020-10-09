@@ -30,7 +30,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/food_placeholder"
             app:layout_constraintTop_toTopOf="parent"
-            app:profileImage="@{viewModel.image}" />
+            app:thumbnail="@{viewModel.image}" />
 
         <TextView
             android:id="@+id/detail_title"

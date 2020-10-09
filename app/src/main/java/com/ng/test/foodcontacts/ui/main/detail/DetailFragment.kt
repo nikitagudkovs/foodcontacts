@@ -11,6 +11,7 @@ import com.ng.test.foodcontacts.data.local.room.RecipeEntity
 import com.ng.test.foodcontacts.databinding.FragmentDetailBinding
 import com.ng.test.foodcontacts.di.ActivityScoped
 import com.ng.test.foodcontacts.ui.main.base.BaseFragment
+import com.ng.test.foodcontacts.ui.main.home.HomeFragment.Companion.SELECTED_RECIPE
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
@@ -44,7 +45,7 @@ class DetailFragment @Inject constructor() : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val args = arguments
-        val recipeJson = args?.getString("selected_recipe", "")
+        val recipeJson = args?.getString(SELECTED_RECIPE, "")
         detailViewModel.recipe = recipeJson?.let { Gson().fromJson(it, RecipeEntity::class.java) }
 
         detailViewModel.showRecipe()

@@ -95,7 +95,7 @@ class HomeViewModel @Inject constructor(
                     it.number = numbers.firstOrNull() ?: ""
                 }
             }
-            items.addAll(userContacts.filter { it.name.isNotBlank() })
+            items.addAll(userContacts.filter { it.name.isNotBlank() && !items.contains(it) })
         }
     }
 

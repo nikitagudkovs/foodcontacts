@@ -14,7 +14,6 @@ open class EatHimApp : DaggerApplication() {
     override fun onCreate() {
         super.onCreate()
 
-        // Initialize Stetho
         Stetho.initializeWithDefaults(this)
     }
 

@@ -22,6 +22,7 @@ import com.ng.test.foodcontacts.ui.component.adapter.RecipeAdapter
 import com.ng.test.foodcontacts.ui.main.base.BaseFragment
 import com.ng.test.foodcontacts.ui.main.detail.DetailFragment
 import com.ng.test.foodcontacts.util.ext.hasPermission
+import com.ng.test.foodcontacts.util.ext.replaceFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -100,15 +101,9 @@ class HomeFragment @Inject constructor() : BaseFragment() {
             recipe?.let {
                 val detailFragment = DetailFragment()
                 val args = Bundle()
-                args.putString("selected_recipe", Gson().toJson(it))
+                args.putString(SELECTED_RECIPE, Gson().toJson(it))
                 detailFragment.arguments = args
-                activity?.supportFragmentManager?.beginTransaction()?.replace(
-                    R.id.content_frame,
-                    detailFragment,
-                    "detailFragment"
-                )
-                    ?.addToBackStack(this.tag)
-                    ?.commit();
+                (activity as MainActivity).replaceFragment(R.id.content_frame, ::DetailFragment)?.arguments = Bundle(args)
             }
         })
     }
@@ -171,13 +166,14 @@ class HomeFragment @Inject constructor() : BaseFragment() {
                 )
             }
         } else {
-            //(getString(R.string.no_number)).makeToast(this, position = Gravity.TOP, yOffset = -100)
+            Toast.makeText(context, "Number is invalid", LENGTH_LONG).show()
         }
     }
 
     companion object {
         const val PERMISSIONS_REQUEST_READ_CONTACTS = 100
         const val PERMISSIONS_REQUEST_MAKE_CALL = 111
+        const val SELECTED_RECIPE = "selected_recipe"
     }
 
 }

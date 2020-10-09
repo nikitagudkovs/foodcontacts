@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">kotlin-mvvm-boilerplate</string>
-    <string name="btn_login">Login</string>
+    <string name="app_name">Food and Friends</string>
     <string name="title_home">Food And Friends</string>
 </resources>

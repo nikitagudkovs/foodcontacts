@@ -7,5 +7,4 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun recipeDao(): RecipeDao
-    //abstract fun contactDao(): ContactDao
 }
