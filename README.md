@@ -1,6 +1,6 @@
 # Food & Contacts app
 
-Test project for <hidden>
+Test project for -hidden-
 
 ## Major technologies
 
