@@ -1,6 +1,6 @@
 # Food & Contacts app
 
-Test project for UNIQ
+Test project for <hidden>
 
 ## Major technologies
 
