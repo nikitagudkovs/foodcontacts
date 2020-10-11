@@ -1,6 +1,6 @@
 # Food & Contacts app
 
-Test project
+Test project for UNIQ
 
 ## Major technologies
 
@@ -8,5 +8,5 @@ Test project
 - Architecture: MVVM
 - Android architecture components: ViewModel, LiveData, Room
 - Dependency injection: Dagger2
-- Network: Retrofit, RxJava, Moshi and Kotshi
-- Testing: JUnit, Espresso, Mockito
+- Network: Retrofit, RxJava
+- Testing: Espresso
